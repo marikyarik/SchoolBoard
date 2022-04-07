@@ -1,0 +1,19 @@
+{
+  "name": "quantox/school-board",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Yaroslav Selivanov",
+      "email": "yaroslavselivanov14@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "src/"
+    }
+  }
+}
