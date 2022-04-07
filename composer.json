@@ -10,6 +10,8 @@
     }
   ],
   "require": {
+    "vlucas/phpdotenv": "^v5.4.1",
+    "ext-pdo": "*"
   },
   "autoload": {
     "psr-4": {

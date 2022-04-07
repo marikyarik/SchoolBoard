@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS grade (student_id INTEGER, grade INTEGER, FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE ON UPDATE NO ACTION);
+INSERT INTO grade (student_id, grade) VALUES(1, 7);
+INSERT INTO grade (student_id, grade) VALUES(1, 8);
+INSERT INTO grade (student_id, grade) VALUES(1, 3);
+INSERT INTO grade (student_id, grade) VALUES(2, 5);
+INSERT INTO grade (student_id, grade) VALUES(2, 10);
+INSERT INTO grade (student_id, grade) VALUES(3, 5);
+INSERT INTO grade (student_id, grade) VALUES(3, 10);
+INSERT INTO grade (student_id, grade) VALUES(3, 8);
+INSERT INTO grade (student_id, grade) VALUES(4, 7);
+INSERT INTO grade (student_id, grade) VALUES(4, 1);
