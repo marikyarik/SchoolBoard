@@ -77,6 +77,22 @@ class Student
         $this->setIsPass();
     }
 
+    /**
+     * @return bool
+     */
+    public function isPass(): bool
+    {
+        return $this->isPass;
+    }
+
+    /**
+     * @return float|int
+     */
+    public function getAverageGrade(): float|int
+    {
+        return $this->averageGrade;
+    }
+
     public function setAverageGrade(): void
     {
         $this->averageGrade = 0;

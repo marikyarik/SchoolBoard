@@ -2,8 +2,18 @@
 
 namespace app\controller;
 
+use app\component\Template;
+
 class BaseController
 {
+
+    protected Template $template;
+
+    public function __construct()
+    {
+        $this->template = new Template('./src/template');
+    }
+
     public function toJson($data): string
     {
         header('Content-Type: application/json; charset=utf-8');

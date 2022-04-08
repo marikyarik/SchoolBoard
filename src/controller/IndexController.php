@@ -1,10 +1,10 @@
 <?php
 namespace app\controller;
 
-class IndexController
+class IndexController extends BaseController
 {
     public function index()
     {
-        echo "hello world";
+        echo $this->template->render('home.php');
     }
 }

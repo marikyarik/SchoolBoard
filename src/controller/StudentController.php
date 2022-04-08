@@ -15,6 +15,7 @@ class StudentController extends BaseController
     {
         $this->repository = new StudentRepository();
         $this->gradeRepository = new GradeRepository();
+        parent::__construct();
     }
 
     public function list()
