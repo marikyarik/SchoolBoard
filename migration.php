@@ -15,8 +15,7 @@ foreach($files as $file) {
     $commands = explode(';', $commands);
     foreach($commands as $command) {
         if(strlen($command) > 0) {
-            echo $command;
-            echo $connection->exec($command);
+            $connection->exec($command);
         }
     }
 }

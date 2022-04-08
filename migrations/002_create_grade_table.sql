@@ -7,5 +7,6 @@ INSERT INTO grade (student_id, grade) VALUES(2, 10);
 INSERT INTO grade (student_id, grade) VALUES(3, 5);
 INSERT INTO grade (student_id, grade) VALUES(3, 10);
 INSERT INTO grade (student_id, grade) VALUES(3, 8);
-INSERT INTO grade (student_id, grade) VALUES(4, 7);
+INSERT INTO grade (student_id, grade) VALUES(4, 3);
 INSERT INTO grade (student_id, grade) VALUES(4, 1);
+INSERT INTO grade (student_id, grade) VALUES(4, 9);

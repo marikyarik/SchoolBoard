@@ -6,8 +6,8 @@ use app\database\Db;
 
 class Repository
 {
-    private \PDO $connection;
-    private string $class;
+    protected \PDO $connection;
+    protected string $class;
 
     public function __construct(string $class)
     {

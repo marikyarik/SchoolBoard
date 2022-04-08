@@ -7,6 +7,9 @@ class Student
     private int $id;
     private string $name;
     private string $board;
+    private array $grades;
+    private float $averageGrade = 0;
+    private bool $isPass = false;
 
     /**
      * @return int
@@ -54,5 +57,51 @@ class Student
     public function setBoard(string $board): void
     {
         $this->board = $board;
+    }
+
+    /**
+     * @return array
+     */
+    public function getGrades(): array
+    {
+        return $this->grades;
+    }
+
+    /**
+     * @param array $grades
+     */
+    public function setGrades(array $grades): void
+    {
+        $this->grades = $grades;
+        $this->setAverageGrade();
+        $this->setIsPass();
+    }
+
+    public function setAverageGrade(): void
+    {
+        $this->averageGrade = 0;
+        $grades = $this->getGrades();
+        if(sizeof($grades) > 0) {
+            if ('CSMB' === $this->getBoard() && count($grades) > 2) {
+                $min = min($grades);
+                $grades = array_diff($grades, [$min]);
+            }
+            $this->averageGrade = round(array_sum($grades) / count($grades), 2);
+        }
+    }
+
+    public function setIsPass(): void
+    {
+        $this->isPass = false;
+        if ('CSM' === $this->getBoard()) {
+            $this->isPass = $this->averageGrade >= 7;
+        } else if ('CSMB' === $this->getBoard()) {
+            $grades = $this->getGrades();
+            if (count($grades) > 2) {
+                $min = min($grades);
+                $grades = array_diff($grades, [$min]);
+            }
+            $this->isPass = max($grades) > 8;
+        }
     }
 }
