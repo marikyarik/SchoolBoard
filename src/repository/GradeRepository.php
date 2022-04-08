@@ -23,4 +23,10 @@ class GradeRepository extends Repository
 
         return $data;
     }
+
+    public function addGradeToStudent(int $id, int $grade) {
+        $table = $this->class::table;
+        $query = $this->connection->prepare("INSERT INTO {$table} (student_id, grade) VALUES(?, ?)");
+        $query->execute(array($id, $grade));
+    }
 }

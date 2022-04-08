@@ -25,12 +25,8 @@ class Request implements RequestInterface
     public function getBody(): array
     {
         if ('POST' === $this->requestMethod) {
-            $body = [];
-            foreach($_POST as $key => $value)
-            {
-                $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
-            }
-            return $body;
+            $json = file_get_contents('php://input');
+            return json_decode($json, true);
         }
 
         return [];

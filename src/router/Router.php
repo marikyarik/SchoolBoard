@@ -49,7 +49,7 @@ class Router
                 array_shift($params);
                 list($class, $method) = $methodData;
 
-                echo (new $class())->$method($params[0] ?? null);
+                echo (new $class($this->request))->$method($params[0] ?? null);
                 return;
             }
         }

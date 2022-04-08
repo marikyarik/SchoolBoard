@@ -15,3 +15,4 @@ $router->get('/', [IndexController::class, 'index']);
 
 $router->get('/students', [StudentController::class, 'list']);
 $router->get('/students/:id', [StudentController::class, 'get']);
+$router->post('/students/:id', [StudentController::class, 'addGrade']);

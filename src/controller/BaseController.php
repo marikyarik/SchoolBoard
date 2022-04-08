@@ -3,15 +3,18 @@
 namespace app\controller;
 
 use app\component\Template;
+use app\router\RequestInterface;
 
 class BaseController
 {
 
     protected Template $template;
+    protected RequestInterface $request;
 
-    public function __construct()
+    public function __construct(RequestInterface $request)
     {
         $this->template = new Template('./src/template');
+        $this->request = $request;
     }
 
     public function toJson($data): string

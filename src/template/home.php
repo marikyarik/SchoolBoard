@@ -16,6 +16,7 @@
         <th scope="col">Avarage Grade</th>
         <th scope="col">Is Pass</th>
         <th scope="col">Link</th>
+        <th scope="col">Add Grade <input id="new-grade" value="" type="number"/></th>
     </tr>
     </thead>
     <tbody id="students">

@@ -3,6 +3,7 @@ namespace app\entity;
 
 class Student
 {
+    const MAX_GRADES = 4;
     const table = 'student';
     private int $id;
     private string $name;
