@@ -39,15 +39,21 @@ class Router
     function resolve()
     {
         $methodDictionary = $this->{strtolower($this->request->requestMethod)};
-        $method = $methodDictionary[$this->request->requestUri];
+        foreach ($methodDictionary as $route => $methodData) {
+            $pattern = "@^" . preg_replace('/:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', $route) . "$@D";
 
-        if(is_null($method))
-        {
-            $this->notFoundMethodHandler();
-            return;
+            $params = [];
+
+            $match = preg_match($pattern, $this->request->requestUri, $params);
+            if($match) {
+                array_shift($params);
+                list($class, $method) = $methodData;
+
+                return (new $class())->$method($params[0]);
+            }
         }
 
-        echo call_user_func_array($method, array($this->request));
+        $this->notFoundMethodHandler();
     }
 
     function __destruct()
