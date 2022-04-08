@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "php": ">=8.0",
     "vlucas/phpdotenv": "^v5.4.1",
     "ext-pdo": "*",
     "ext-json": "*",
